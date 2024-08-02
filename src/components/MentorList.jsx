@@ -28,7 +28,7 @@ export default function MentorList() {
   // Fetch students list
   useEffect(() => {
     axios
-      .get("http://localhost:3000/students/")
+      .get("https://mentor-students-react.onrender.com/students/")
       .then((response) => {
         dispatcher(saveAllStudents(response.data));
       })
@@ -40,7 +40,7 @@ export default function MentorList() {
   // Get single student
   const handleGetStudent = (_id) => {
     axios
-      .get(`http://localhost:3000/students/student/${_id}`)
+      .get(`https://mentor-students-react.onrender.com/students/student/${_id}`)
       .then((response) => {
         let newStudent = response.data.data.name;
         if (!addStudent.includes(newStudent)) {
@@ -68,7 +68,7 @@ export default function MentorList() {
     const updatedStudents = [...new Set([...currentStudents, ...addStudent])];
 
     axios
-      .patch(`http://localhost:3000/mentors/update/${mentorId}`, {
+      .patch(`https://mentor-students-react.onrender.com/mentors/update/${mentorId}`, {
         students: updatedStudents,
       })
       .then((response) => {

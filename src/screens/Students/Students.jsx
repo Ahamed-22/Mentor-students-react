@@ -11,7 +11,7 @@ export default function Students() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/students/")
+      .get("https://mentor-students-react.onrender.com/students/")
       .then((response) => {
         dispatcher(saveAllStudents(response.data));
       })
@@ -30,7 +30,7 @@ export default function Students() {
           }}
           onSubmit={(values, { resetForm }) => {
             axios
-              .post("http://localhost:3000/students/create", {
+              .post("https://mentor-students-react.onrender.com/students/create", {
                 name: values.name,
               })
               .then((response) => {

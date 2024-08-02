@@ -11,7 +11,7 @@ export default function Mentors() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/mentors/")
+      .get("https://mentor-students-react.onrender.com/mentors/")
       .then((response) => {
         dispatcher(saveAllMentors(response.data));
       })
@@ -30,7 +30,7 @@ export default function Mentors() {
           }}
           onSubmit={(values, { resetForm }) => {
             axios
-              .post("http://localhost:3000/mentors/create", {
+              .post("https://mentor-students-react.onrender.com/mentors/create", {
                 name: values.MentorName,
               })
               .then((response) => {
